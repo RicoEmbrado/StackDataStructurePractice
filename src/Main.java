@@ -2,6 +2,9 @@ public class Main
 {
     public static void main(String[] args)
     {
-        System.out.println("Hello world!");
+        StackDataStructure myStack = new StackDataStructure();
+        myStack.pushNewNode(1);
+        myStack.pushNewNode(2);
+        myStack.pushNewNode(3);
     }
 }

@@ -15,61 +15,29 @@ public class StackDataStructure
 
     //method add to list
 
-    public void pushNewNode(int info)
+    public void push(int addData)
     {
-        tail = new Node(info, tail);
-    }
-
-    public void showList()
-    {
-        Node position = head;
-        while (position != null)
+        Node newNode = new Node(addData, null);
+        if (isEmpty())
         {
-            System.out.println(position.getData());
-            position = position.getLink();
+            tail = newNode;
         }
-    }
-
-    public void popNode()
-    {
-        if(tail != null)
+        else
         {
-            tail = tail.getLink();
+            newNode.setLink(tail);
+            tail = newNode;
         }
     }
 
-    private class Node
+    public int pop()
     {
-        //instance variables
-
-        private int data;
-        private Node link;
-
-        //constructors
-
-        public Node (int data, Node link)
+        if (isEmpty())
         {
-            this.data = data;
-            this.link = link;
+            System.out.println("Stack is empty. Cannot pop.");
+            return -1; //returning -1 meaning failure
         }
-
-        //getters & setters
-
-        public int getData()
-        {
-            return data;
-        }
-
-        public Node getLink()
-        {
-            return link;
-        }
-
-        //toString
-
-        public String toString()
-        {
-            return "data: " + data + " links to " + link;
-        }
+        int data = tail.getData();
+        tail = tail.getLink();
+        return data;
     }
 }
