@@ -56,6 +56,16 @@ public class StackDataStructure
         }
     }
 
+    public int peek()
+    {
+        if(isEmpty())
+        {
+            System.out.println("Stack is empty, cannot peek.");
+            return -1;
+        }
+        return tail.getData();
+    }
+
     private class Node
     {
         private int data;
