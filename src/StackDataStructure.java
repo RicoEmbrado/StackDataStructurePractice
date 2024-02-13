@@ -40,4 +40,46 @@ public class StackDataStructure
         tail = tail.getLink();
         return data;
     }
+
+    public boolean isEmpty()
+    {
+        return tail == null;
+    }
+
+    public void display()
+    {
+        Node current = tail;
+        while (current != null)
+        {
+            System.out.println(current.getData());
+            current = current.getLink();
+        }
+    }
+
+    private class Node
+    {
+        private int data;
+        private Node link;
+
+        public Node(int data, Node link)
+        {
+            this.data = data;
+            this.link = link;
+        }
+
+        public int getData()
+        {
+            return data;
+        }
+
+        public Node getLink()
+        {
+            return link;
+        }
+
+        public void setLink(Node link)
+        {
+            this.link = link;
+        }
+    }
 }
